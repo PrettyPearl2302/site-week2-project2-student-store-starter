@@ -9,16 +9,17 @@ export default function Navbar() {
 		<nav className="nav-container">
 			<Logo />
 			<div className="nav-socials">
-				<a href="https://twitter.com" className="nav-social-link">
-					<FaTwitter />
-				</a>
-				<a href="https://instagram.com" className="nav-social-link">
-					<FaInstagram />
-				</a>
-				<a href="https://facebook.com" className="nav-social-link">
-					<FaFacebook />
-				</a>
+					<a className="nav-social-link">
+						<FaTwitter />
+					</a>
+					<a className="nav-social-link">
+						<FaInstagram />
+					</a>
+					<a className="nav-social-link">
+						<FaFacebook />
+					</a>
 			</div>
+
 			{/* <div className="nav-links">
 				<Link to="/" className="nav-link">
 					Home
