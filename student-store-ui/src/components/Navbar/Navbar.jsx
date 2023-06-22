@@ -9,18 +9,18 @@ export default function Navbar() {
 		<nav className="nav-container">
 			<Logo />
 			<div className="nav-socials">
-					<a className="nav-social-link">
+					<a>
 						<FaTwitter />
 					</a>
-					<a className="nav-social-link">
+					<a>
 						<FaInstagram />
 					</a>
-					<a className="nav-social-link">
+					<a>
 						<FaFacebook />
 					</a>
 			</div>
 
-			{/* <div className="nav-links">
+			<div className="nav-links">
 				<Link to="/" className="nav-link">
 					Home
 				</Link>
@@ -33,7 +33,7 @@ export default function Navbar() {
 				<Link to="/contact" className="nav-link">
 					Buy now
 				</Link>
-			</div> */}
+			</div> 
 		</nav>
 	)
 }
