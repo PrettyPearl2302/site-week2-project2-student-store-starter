@@ -4,7 +4,7 @@ import "./Logo.css"
 export default function Logo() {
     return (
         <Link to="/">
-            <div className="codepath-logo">
+            <div className="code-path-ogo">
 				<img src="/codepath-logo.png" alt="main-page-logo" />
             </div>
         </Link>

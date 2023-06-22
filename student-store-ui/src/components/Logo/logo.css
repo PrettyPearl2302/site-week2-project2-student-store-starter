@@ -1,8 +1,7 @@
-.codepath-logo img {
+.code-path-logo img {
     width: 40px;
 	height: 40px;
-    margin-left: 10rem;
     position: relative;
-    left: 70px;
-
+	margin-left: 10rem;
+	left: 70px;
 }
