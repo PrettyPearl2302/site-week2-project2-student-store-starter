@@ -1,13 +1,13 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
-// import { ProductContext } from "../../state/ProductContext";
+import { ProductContext } from "../../state/ProductContext";
 import { AiOutlineLoading } from "react-icons/ai"
 import "./ProductDetail.css";
-// import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
+import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
 
 const ProductDetail = () => {
   const { productId } = useParams();
-//   const { products, addToCart, removeFromCart } = useContext(ProductContext);
+  const { products, addToCart, removeFromCart } = useContext(ProductContext);
 
   const product = products.products.find((product) => product.id == productId);
 
@@ -22,10 +22,10 @@ const ProductDetail = () => {
       <h2>{product.name}</h2>
       <img src={product.image} alt={product.name} />
       <p>{product.description}</p>
-      {/* <div className="pd-signs">
+      <div className="pd-signs">
         <HiOutlinePlus className="pd-sign pd-plus" onClick={() => addToCart(product)}/>
         <HiOutlineMinus className="pd-sign pd-minus" onClick={() => removeFromCart(product.id)} />
-    </div> */}
+    </div>
     <div className="pd-stars">
         <img src="/stars.png" alt="stars" />
     </div>
@@ -35,8 +35,8 @@ const ProductDetail = () => {
 };
 
 export function formatPrice(price) {
-  const formattedPrice = price % 1 === 0 ? price.toFixed(0) : price.toFixed(2);
-  return `$${formattedPrice}`;
-}
+    const formattedPrice = price % 1 === 0 ? price.toFixed(0) : price.toFixed(2);
+    return `$${formattedPrice}`;
+  }
 
 export default ProductDetail;
