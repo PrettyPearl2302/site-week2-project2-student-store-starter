@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import "./Search.css";
 
-const handleSearch = (event) => {
+const Search = () => {
 
     const [searchQuery, setSearchQuery] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
 
-    const query = event.target.value;
-    setSearchQuery(query);
+    const handleSearch = (event) => {
+        const { value } = event.target;
+        setSearchQuery(value);
   
     // Filter the products based on the search query
     const filteredProducts = products.filter((product) => {
@@ -17,10 +19,16 @@ const handleSearch = (event) => {
   
     setSearchResults(filteredProducts);
 
-    <input type="text" value={searchQuery} onChange={handleSearch} placeholder="Search products here" />
+    return (
+        <div>
+            <input type="text" value={query} onChange={handleSearch} placeholder="Search products here" />
+        </div>
+    )
+      
   };
 
-  export default handleSearch;
+}
 
-  
+export default Search;
+
   
