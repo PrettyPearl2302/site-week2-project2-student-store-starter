@@ -1,7 +1,8 @@
 import React, { useState } from "react"
-import { MdAddShoppingCart } from "react-icons/md"
+import { MdOutlineAddShoppingCart } from "react-icons/md"
+import { TbCoin } from "react-icons/tb"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
-import { BsCashCoin, BsCreditCard } from "react-icons/bs"
+import { BsCardText } from "react-icons/bs"
 import "./Sidebar.css"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
@@ -19,9 +20,9 @@ export default function Sidebar() {
 				{isOpen ? <AiOutlineArrowLeft className="arrow" /> : <AiOutlineArrowRight className="arrow" />}
 			</div>
 			<div className={`sidebar-icons ${isOpen ? "open" : ""}`}>
-				<MdAddShoppingCart className="sidebar-icon" onClick={handleToggle}/>
-				<BsCashCoin className="sidebar-icon" onClick={handleToggle}/>
-				<BsCreditCard className="sidebar-icon" onClick={handleToggle}/>
+				<MdOutlineAddShoppingCart className="sidebar-icon" onClick={handleToggle}/>
+				<TbCoin className="sidebar-icon" onClick={handleToggle}/>
+				<BsCardText className="sidebar-icon" onClick={handleToggle}/>
 			</div>
 			<div className="sidebar-content">
 				<ShoppingCart />
