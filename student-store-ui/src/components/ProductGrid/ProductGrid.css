@@ -1,0 +1,75 @@
+.product-name-count {
+	display: flex;
+	justify-content: space-between;
+}
+
+.product-name-count p {
+	white-space: nowrap;
+	font-size: 1.1rem;
+	position: relative;
+	margin-left: 0.25rem;
+	top: -10px;
+}
+
+.product-header {
+    margin-top: 6rem;
+}
+
+.product-name-count div {
+	display: flex;
+	position: relative;
+	gap: 10px;
+	top: 2px;
+	padding: 0.3rem;
+	margin-right: 0.5rem;
+}
+
+.product-price {
+	margin-left: 0.5rem;
+	position: relative;
+	bottom: -10px;
+}
+
+.loading-spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 200px;
+}
+
+.spinner {
+	animation: spin 1s infinite linear;
+	font-size: 3rem;
+}
+
+.product-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.product-item {
+	width: 240px;
+	height: 400px;
+	object-fit: cover;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: 0.15s;
+}
+
+.product-item:hover {
+	scale: 1.05;
+}
+
+.product-item img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

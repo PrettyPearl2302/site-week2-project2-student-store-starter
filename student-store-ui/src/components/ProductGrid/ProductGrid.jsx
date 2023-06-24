@@ -4,7 +4,7 @@ import "./ProductGrid.css"
 import ProductCard from '../ProductCard/ProductCard'
 
 const ProductGrid = ({ products, isFetching }) => {
-    console.log(products);
+
   return (
     <>
         <h3 className='product-header'>Best Selling Products</h3>
