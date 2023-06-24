@@ -3,7 +3,6 @@ import "./Categories.css";
 
 export default function Categories({ selectCategory }) {
   function handleClick(category) {
-    console.log(Clicked on: ${category});
     selectCategory(category);
   }
 
