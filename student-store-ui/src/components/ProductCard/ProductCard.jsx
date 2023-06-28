@@ -5,8 +5,10 @@ import "./ProductCard.css"
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
-  const { addToCart, removeFromCart } = useContext(ProductContext)
-  
+  const { addToCart, removeFromCart , cartItems } = useContext(ProductContext)
+  const itemInCart = cartItems.find((item) => item.id === product.id);
+  const quantity = itemInCart ? itemInCart.quantity : 0;
+
   return (
     <div key={product.id} className="product-item">
       <Link to={`/products/${product.id}`} style={{ textDecoration: "none", color: "inherit" }}>
@@ -19,6 +21,7 @@ const ProductCard = ({ product }) => {
                 <HiOutlineMinus className="sign minus" onClick={(event) => { event.preventDefault(); removeFromCart(product); }} />
               </div>
             </div>
+            <span className="quantity">{quantity}</span>
         </div>
             <p className="product-price">{formatPrice(product.price)}</p>
             <div className="stars">
