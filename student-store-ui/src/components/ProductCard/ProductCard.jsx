@@ -1,8 +1,12 @@
+import { useContext } from 'react'
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi"
+import { ProductContext } from "../../state/ProductContext";
 import "./ProductCard.css"
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
+  const { addToCart, removeFromCart } = useContext(ProductContext)
+  
   return (
     <div key={product.id} className="product-item">
       <Link to={`/products/${product.id}`} style={{ textDecoration: "none", color: "inherit" }}>
