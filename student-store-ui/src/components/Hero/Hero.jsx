@@ -15,7 +15,7 @@ export default function Hero() {
 					you're ready.
 				</p>
 			</div>
-			<img className="hero-image" src="/hero-img.png" alt="logo" />
+			<img className="hero-image" src="/shop.png" alt="logo" />
 		</nav>
 	)
 }
