@@ -27,7 +27,7 @@ const ProductDetail = () => {
         <HiOutlineMinus className="pd-sign pd-minus" onClick={() => removeFromCart(product.id)} />
     </div>
     <div className="pd-stars">
-        <img src="/stars.png" alt="stars" />
+        <img src="/starss.png" alt="stars" />
     </div>
     <p className="pd-price">Price: {formatPrice(product.price)}</p>
     </div>
