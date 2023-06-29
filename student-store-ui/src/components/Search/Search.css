@@ -6,7 +6,30 @@
     margin-top: 30px;
     
   }
-  
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  padding-top: 4%;
+}
+
+.search-container .help {
+  display: flex;
+  gap: 50px;
+  width: 150px;
+  height: 45px;
+}
+.help{
+  cursor: pointer;
+}
+.cart-image {
+  cursor: pointer;
+  display: flex;
+  gap: 50px;
+  width: 150px;
+  height: 40px;
+}
+
 input[type="text"] {
     width: 650px;
     height: 35px;
@@ -16,18 +39,38 @@ input[type="text"] {
     border-radius: 4px;
   }
   
-.searchBtn {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin-top: 30px;
-    margin-left: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    height: 35px;
-  }
-  
-.searchBtn:hover {
-    opacity: 0.8;
-  }
+.filter-categories{
+  position:relative;
+  padding-top: 4%;
+}
+
+.hamburger-menu {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.search-categories {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-categories li {
+  cursor: pointer;
+  font-size: 18px;
+  padding-top: 2%;
+}
+
+.search-categories li:hover {
+  border-bottom: 2px solid #02c385;
+}
+
+
+.filter-categories.open .search-categories {
+  display: flex;
+}
+
+/* .filter-categories.open .materials-icon {
+  /* Add necessary styles for the hamburger menu icon when categories are open */
