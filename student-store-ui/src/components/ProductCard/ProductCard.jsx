@@ -21,11 +21,10 @@ const ProductCard = ({ product }) => {
                 <HiOutlineMinus className="sign minus" onClick={(event) => { event.preventDefault(); removeFromCart(product); }} />
               </div>
             </div>
-            <span className="quantity">{quantity}</span>
         </div>
             <p className="product-price">{formatPrice(product.price)}</p>
             <div className="stars">
-                <img src="/stars.png" alt="stars" />
+                <img src="/starss.png" alt="stars" />
             </div>
         </Link>
     </div>
