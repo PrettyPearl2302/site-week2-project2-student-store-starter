@@ -39,6 +39,7 @@ export const ProductProvider = ({ children }) => {
     cartItems,
     setFetchedProducts,
     addToCart,
+    setCartItems,
     setProducts,
     removeFromCart,
     setFilteredProducts
