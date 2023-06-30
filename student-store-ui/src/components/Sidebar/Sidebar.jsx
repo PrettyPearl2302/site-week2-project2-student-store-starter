@@ -26,7 +26,7 @@ export default function Sidebar() {
 			</div>
 			<div className="sidebar-content">
 				<ShoppingCart />
-				<CheckoutForm />
+      			<CheckoutForm />
 			</div>
 		</aside>
 	)
