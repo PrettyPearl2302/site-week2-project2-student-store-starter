@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { MdFactCheck } from "react-icons/md";
 import "./CheckoutForm.css"
 import { ProductContext } from "../../state/ProductContext";
+import { formatPrice } from "../ProductCard/ProductCard"; 
 
 const CheckoutForm = () => {
   const { cartItems, setCartItems } = useContext(ProductContext);
@@ -9,6 +10,8 @@ const CheckoutForm = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [agreeTerms, setAgreeTerms] = useState(false);
+  const [receiptVisible , setReceiptVisible] = useState(false);
+  const [receiptDetails , setReceiptDetails] = useState(false);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -30,16 +33,35 @@ const CheckoutForm = () => {
       return
     } else {
       if (!cartItems.length) return setErrorMessage("You need items in the cart to checkout!")
-      // Perform checkout logic here
+
       setErrorMessage("");
       console.log("Checkout successful!");
     }
 
+    const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const taxRate = 0.9;
+    const taxes = taxRate;
+    const total = subtotal + taxes;
+
+    const receipt = {
+      name,
+      email,
+      items: cartItems,
+      subtotal,
+      taxes,
+      total,
+    };
+
     setName("");
-    setCartItems([])
+    setCartItems([]);
     setEmail("");
     setAgreeTerms(false);
+
+    setReceiptVisible(true);
+    console.log(receiptVisible)
+    setReceiptDetails(receipt);
   };
+
 
   return (
     <div className="checkout-form-container">
@@ -92,10 +114,32 @@ const CheckoutForm = () => {
           <MdFactCheck className="info-icon" />
         </div>
         <p className="info-text">
-          A confirmation email will be sent to you so that you can confirm this
-          order.
+          See receipt when you check out. 
         </p>
       </div>
+
+
+      {receiptVisible && (
+      <div className="receipt">
+          <h3 className="receipt-title">Receipt: </h3>
+          <div className="receipt-details">
+            <p className="receipt-label">Name: {receiptDetails.name}</p>
+            <p className="receipt-label">Email: {receiptDetails.email}</p>
+            <p className="receipt-label">Items:</p>
+            <ul className="items">
+              {receiptDetails.items.map((item) => (
+                  <li key={item.id}>
+                    {item.name} - Quantity: {item.quantity} - Price: {formatPrice(item.price)}
+                  </li>
+                ))}
+            </ul>
+            <p className="receipt-label">Subtotal: {formatPrice(receiptDetails.subtotal)}</p>
+            <p className="receipt-label">Tax: {formatPrice(receiptDetails.taxes)}</p>
+            <p className="receipt-label">Total: {formatPrice(receiptDetails.total)}</p>
+
+          </div>
+      </div>
+      )}
     </div>
   );
 };
