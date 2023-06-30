@@ -7,7 +7,8 @@ import { formatPrice } from "../ProductCard/ProductCard";
 const ShoppingCart = () => {
     const { cartItems } = useContext(ProductContext);
     const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-    const taxes = subtotal * 0.09; //Assuming 9% tax rate
+    const taxRate = 0.9;
+    const taxes = taxRate;
     const total = subtotal + taxes;
 
 
