@@ -87,3 +87,23 @@
     margin: 0;
   }
   
+  .receipt {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fbfbfb;
+    border-radius: 8px;
+  }
+  
+  .receipt-title {
+    margin-bottom: 10px;
+    color: #02c385;
+  }
+
+  .receipt-label {
+    color: #2c3f47;
+  }
+  
+  .items {
+    color: #2c3f47;
+  }
+  
